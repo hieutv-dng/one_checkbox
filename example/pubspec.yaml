@@ -1,0 +1,22 @@
+name: one_checkbox_example
+description: Demonstrates how to use the one_checkbox package.
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  one_checkbox:
+    path:
+      ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
