@@ -11,29 +11,66 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<!-- TODO: Put a short description of the package here that helps potential users
+know whether this package might be useful for them. -->
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Package created to give a fully functional and customizable CheckBox.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+![enter image description here](assets/1.gif)
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+The most simple use is this one. A prepared checkbox that has a callback when selected/unselected.
 
 ```dart
-const like = 'sample';
+OneCheckbox(
+    onChanged: (isChecked) {},
+)
 ```
 
-## Additional information
+## Customize to your needs  
+You can customize all sort of behaviors and look you want. You can do things like change selected/unselected color, selected/unselected  
+widgets, etc.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+Center(
+    child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        OneCheckbox(
+            controller: _checkboxAController,
+        ),
+        OneCheckbox(
+            label: const Text('With label'),
+            controller: _checkboxBController,
+        ),
+        OneCheckbox(
+            label: const Text('With another icon'),
+            checkedIcon: const Icon(Icons.access_time_filled, color: Colors.red),
+            uncheckIcon: const Icon(Icons.access_time, color: Colors.green),
+            controller: _checkboxCController,
+        ),
+        TextButton(
+            onPressed: () {
+            _checkboxAController.isChecked = true;
+            _checkboxBController.isChecked = true;
+            _checkboxCController.isChecked = true;
+            },
+            child: const Text('Check all'),
+        ),
+        TextButton(
+            onPressed: () {
+            _checkboxAController.isChecked = false;
+            _checkboxBController.isChecked = false;
+            _checkboxCController.isChecked = false;
+            },
+            child: const Text('Uncheck all'),
+        ),
+        ],
+    ),
+)
+```

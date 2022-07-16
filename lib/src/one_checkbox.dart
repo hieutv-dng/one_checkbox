@@ -21,7 +21,7 @@ class OneCheckbox extends StatefulWidget {
   final Widget? label;
   final Widget? uncheckIcon;
   final Widget? checkedIcon;
-  final ValueChanged<bool?>? onChanged;
+  final void Function(bool? isChecked)? onChanged;
   final EdgeInsetsGeometry padding;
   final OneCheckboxController? controller;
   final CrossAxisAlignment crossAxisAlignment;
